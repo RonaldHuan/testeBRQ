@@ -1,7 +1,8 @@
 package com.testautomation.LogicDef;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.core.Logger;
+import java.io.IOException;
+import java.util.Properties;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,23 +12,24 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.testautomation.PageDef.compraPageDef;
+import com.testautomation.Utility.PropertiesFileReader;
 
 public class compraLogicDef {
-	private static final Logger LOG = (Logger) LogManager.getLogger(compraLogicDef.class);
 	
-	
+	PropertiesFileReader objeto = new PropertiesFileReader();
 	private compraPageDef page = new compraPageDef();
 	
 	private WebDriver driver;
-	String baseURL = "http://www.automationpractice.com";
 	String key = "webdriver.chrome.driver";
 	String value = "C:\\Users\\ronald.pereira\\chrome\\chromeDriver80\\chromedriver.exe";
 	
-	public void abrirNavegador() {
+	public void abrirNavegador() throws IOException {
+		System.out.println("<------------------------ INICIANDO TESTE ------------------------>");
+		Properties properties = objeto.getProperty();
 		System.setProperty(key, value);
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get(baseURL);
+		driver.get(properties.getProperty("browser.baseURL"));
 	}
 	
 	public void realizarCompra() {
@@ -39,16 +41,17 @@ public class compraLogicDef {
 		WebElement btnCheckout = (new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(page.getBtnCheckout));
 		btnCheckout.click();
 		if(driver.findElement(page.getLblQtdCarrinho).isDisplayed()) {
-			LOG.info(">>> CARRINHO POSSUI ITENS ADICIONADOS");
+			System.out.println(">>> CARRINHO POSSUI ITEM ADICIONADOS");
 			jse.executeScript("scrollBy(0,500)", "");
 			WebElement btnCheckout_2 = (new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(page.getBtnCheckout_2));
 			btnCheckout_2.click();
 			jse.executeScript("scrollBy(0,500)", "");
 			WebElement preencheEmail = driver.findElement(page.getCampoEmail);
-			preencheEmail.sendKeys("ronaldteste5@gmail.com");
+			preencheEmail.sendKeys("ronaldtest10@gmail.com");
 			driver.findElement(page.getBtnCreateAccount).click();
 		}else {
-			LOG.info(">>> CARRINHO NÃO POSSUI ITENS ADICIONADOS");
+			System.out.println(">>> CARRINHO NÃO POSSUI NENHUM ITEM");
+			Assert.assertTrue(false);
 		}
 	}
 	
@@ -88,8 +91,8 @@ public class compraLogicDef {
 	}
 	
 	public void validarCompra() throws InterruptedException {
+		System.out.println(">>> COMPRA EFETUADA COM SUCESSO!");
 		Assert.assertTrue(driver.findElement(page.getLblValidacao).isDisplayed());
-		Thread.sleep(10000);
 	}
 }
 
