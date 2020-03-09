@@ -1,0 +1,74 @@
+[
+  {
+    "comments": [
+      {
+        "line": 1,
+        "value": "#language: pt"
+      },
+      {
+        "line": 2,
+        "value": "#utf-8"
+      }
+    ],
+    "line": 4,
+    "elements": [
+      {
+        "line": 6,
+        "name": "Realizar compra com sucesso",
+        "description": "",
+        "id": "realizar-compra;realizar-compra-com-sucesso",
+        "type": "scenario",
+        "keyword": "Cenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 15587072800,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "que abro o navegador e acesso o site",
+            "match": {
+              "location": "compraStepDef.abrirNavegador()"
+            },
+            "keyword": "Dado "
+          },
+          {
+            "result": {
+              "duration": 21317192400,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "realizo compra",
+            "match": {
+              "location": "compraStepDef.realizarCompra()"
+            },
+            "keyword": "Quando "
+          },
+          {
+            "result": {
+              "duration": 10106048100,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "valido compra efetuada",
+            "match": {
+              "location": "compraStepDef.validarCompra()"
+            },
+            "keyword": "Entao "
+          }
+        ]
+      }
+    ],
+    "name": "Realizar compra",
+    "description": "",
+    "id": "realizar-compra",
+    "keyword": "Funcionalidade",
+    "uri": "./features/realizarCompra.feature",
+    "tags": [
+      {
+        "line": 3,
+        "name": "@UATTesting"
+      }
+    ]
+  }
+]

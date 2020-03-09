@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="47441" started-at="2020-03-09T18:14:45 BRT" finished-at="2020-03-09T18:15:32 BRT">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="47441" started-at="2020-03-09T18:14:45 BRT" finished-at="2020-03-09T18:15:32 BRT">
+      <class name="com.testautomation.TestRunner.TestRunner">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.testautomation.TestRunner.TestRunner@27a8c74e]" name="setUpClass" is-config="true" duration-ms="218" started-at="2020-03-09T18:14:45 BRT" finished-at="2020-03-09T18:14:45 BRT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.testautomation.TestRunner.TestRunner@27a8c74e]" name="feature" duration-ms="47045" started-at="2020-03-09T18:14:45 BRT" data-provider="features" finished-at="2020-03-09T18:15:32 BRT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Realizar compra]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.testautomation.TestRunner.TestRunner@27a8c74e]" name="tearDownClass" is-config="true" duration-ms="30" started-at="2020-03-09T18:15:32 BRT" finished-at="2020-03-09T18:15:32 BRT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.testautomation.TestRunner.TestRunner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
