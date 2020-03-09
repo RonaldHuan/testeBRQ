@@ -49,21 +49,21 @@ formatter.match({
   "location": "compraStepDef.abrirNavegador()"
 });
 formatter.result({
-  "duration": 15943675500,
+  "duration": 17418400200,
   "status": "passed"
 });
 formatter.match({
   "location": "compraStepDef.realizarCompra()"
 });
 formatter.result({
-  "duration": 24007566700,
+  "duration": 23233028500,
   "status": "passed"
 });
 formatter.match({
   "location": "compraStepDef.validarCompra()"
 });
 formatter.result({
-  "duration": 118376400,
+  "duration": 103610700,
   "status": "passed"
 });
 });

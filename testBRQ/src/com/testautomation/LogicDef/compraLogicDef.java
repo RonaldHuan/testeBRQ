@@ -47,7 +47,7 @@ public class compraLogicDef {
 			btnCheckout_2.click();
 			jse.executeScript("scrollBy(0,500)", "");
 			WebElement preencheEmail = driver.findElement(page.getCampoEmail);
-			preencheEmail.sendKeys("ronaldtest10@gmail.com");
+			preencheEmail.sendKeys("ronaldtest11@gmail.com");
 			driver.findElement(page.getBtnCreateAccount).click();
 		}else {
 			System.out.println(">>> CARRINHO NÃO POSSUI NENHUM ITEM");
